@@ -1,0 +1,18 @@
+@import '../../../style/reboot';
+
+.group-list-container {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: 0;
+    width: 130px;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../../style/reboot';
+
+.student {
+  padding: 10px 35px;
+  margin: 10px 20px;
+  display: inline-block;
+  background-color: $light-gray;
+  min-width: 70px;
+  text-align: center;
+}

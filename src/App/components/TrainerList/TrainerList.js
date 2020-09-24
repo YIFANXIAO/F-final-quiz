@@ -4,6 +4,7 @@ import "./TrainerList.scss"
 import { getTrainers } from '../../../actions';
 import InfoButton from '../Common/InfoButton/InfoButton';
 import AddEntityButton from '../Common/AddEntityButton/AddEntityButton';
+import { TRAINER } from '../Common/Constant';
 
 class TrainerList extends React.Component {
 
@@ -28,7 +29,7 @@ class TrainerList extends React.Component {
                 key={item.id}
               />
             ))}
-            <AddEntityButton placeHolderName="添加讲师"/>
+            <AddEntityButton buttonType={TRAINER} placeHolderName="添加讲师"/>
           </section>)
         }
       </div>

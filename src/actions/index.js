@@ -44,15 +44,6 @@ const getGroupsReceive = info => {
   };
 };
 
-export const getGroups = () => dispatch => {
-  dispatch(getGroupsRequest());
-  fetch('http://localhost:8080/groups/auto-grouping', { method: 'POST' })
-    .then((res) => res.json())
-    .then((data) => {
-      dispatch(getGroupsReceive(data));
-    });
-}
-
 const getTrainersRequest = () => {
   return {
     type: GET_TRAINERS_REQUEST,
@@ -72,6 +63,19 @@ export const getTrainers = () => dispatch => {
     .then((res) => res.json())
     .then((data) => {
       dispatch(getTrainersReceive(data));
+    });
+}
+
+export const getGroups = () => dispatch => {
+  dispatch(getGroupsRequest());
+  fetch('http://localhost:8080/groups/auto-grouping', { method: 'POST' })
+    .then((res) => res.json())
+    .then((data) => {
+      dispatch(getGroupsReceive(data));
+    })
+    .then(() => {
+      dispatch(getTrainers());
+      dispatch(getTrainees());
     });
 }
 
@@ -124,6 +128,9 @@ export const createTrainer = (name) => dispatch => {
     .then((res) => res.json())
     .then((data) => {
       dispatch(CreateTrainerReceive(data));
-    });
+    }).then(() => {
+      dispatch(getTrainers());
+      dispatch(getTrainees());
+  });
 }
 

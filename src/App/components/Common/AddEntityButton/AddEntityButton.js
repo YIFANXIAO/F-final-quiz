@@ -1,7 +1,8 @@
 import React from 'react';
 import "./AddEntityButton.scss"
-import { createTrainer, getTrainees } from '../../../../actions';
+import { createTrainer, getTrainees, getTrainers } from '../../../../actions';
 import { connect } from 'react-redux';
+import { TRAINEE, TRAINER } from '../Constant';
 
 class AddEntityButton extends React.Component {
 
@@ -43,8 +44,9 @@ class AddEntityButton extends React.Component {
     if (keycode === 13 )
     {
       this.handleExistEdit();
-      this.props.handleCreateTrainer(e.target.value);
-      window.location.reload();
+      if (this.props.buttonType === TRAINER) {
+        this.props.handleCreateTrainer(e.target.value);
+      }
     }
   }
 
@@ -59,14 +61,10 @@ class AddEntityButton extends React.Component {
   }
 }
 
-const mapStateToProps = ({ trainees }) => ({
-  trainees
-});
-
 const mapDispatchToProps = dispatch => ({
   handleCreateTrainer(name) {
     dispatch(createTrainer(name));
-  }
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddEntityButton);
+export default connect(null, mapDispatchToProps)(AddEntityButton);

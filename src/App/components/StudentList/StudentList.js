@@ -1,44 +1,54 @@
 import React, { Component } from 'react';
 import './StudentList.scss';
+import { connect } from 'react-redux';
 import Student from './Student/Student';
+import { getTraineesReceive, getTraineesRequest } from '../../../actions';
 
 class StudentList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      studentList: [],
-    };
-  }
 
   componentDidMount() {
-    this.getStudentList();
+    this.props.handleGetTrainees();
   }
 
-  getStudentList = () => {
-    fetch('http://localhost:8080/student-list', { method: 'GET' })
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ studentList: data });
-      });
-  };
-
   render() {
+
+    const { data, isFetching } = this.props.trainees;
+
     return (
       <div className="student-list-container">
         <h1>学员列表</h1>
-        <section className="student-list">
-          {this.state.studentList.map((item) => (
-            <Student
-              studentId={this.state.studentList.indexOf(item) + 1}
-              studentName={item.studentName}
-              key={item.studentName}
-            />
-          ))}
-          <input type="text" placeholder="+ 添加学员" />
-        </section>
+        { isFetching ? (
+            <p>Loading...</p>
+          ) : (
+            <section className="student-list">
+              {data.map((item) => (
+                <Student
+                  studentId={item.id}
+                  studentName={item.name}
+                  key={item.id}
+                />
+              ))}
+              <input type="text" placeholder="+ 添加学员" />
+            </section>)
+        }
       </div>
     );
   }
 }
 
-export default StudentList;
+const mapStateToProps = ({ trainees }) => ({
+  trainees
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleGetTrainees() {
+    dispatch(getTraineesRequest());
+    fetch('http://localhost:8080/trainees?grouped=false', { method: 'GET' })
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(getTraineesReceive(data));
+      });
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentList);

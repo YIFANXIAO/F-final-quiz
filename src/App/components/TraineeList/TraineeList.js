@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './TraineeList.scss';
 import { connect } from 'react-redux';
-import Trainee from './Trainee/Trainee';
+import InfoButton from '../Common/InfoButton/InfoButton';
 import { getTrainees } from '../../../actions';
 
 class TraineeList extends Component {
@@ -20,9 +20,9 @@ class TraineeList extends Component {
           ) : (
             <section className="student-list">
               {data.map((item) => (
-                <Trainee
-                  studentId={item.id}
-                  studentName={item.name}
+                <InfoButton
+                  entityId={item.id}
+                  entityName={item.name}
                   key={item.id}
                 />
               ))}

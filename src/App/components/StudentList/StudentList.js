@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './StudentList.scss';
 import { connect } from 'react-redux';
 import Student from './Student/Student';
-import { getTraineesReceive, getTraineesRequest } from '../../../actions';
+import { getTrainees } from '../../../actions';
 
 class StudentList extends Component {
 
@@ -42,12 +42,7 @@ const mapStateToProps = ({ trainees }) => ({
 
 const mapDispatchToProps = dispatch => ({
   handleGetTrainees() {
-    dispatch(getTraineesRequest());
-    fetch('http://localhost:8080/trainees?grouped=false', { method: 'GET' })
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(getTraineesReceive(data));
-      });
+    dispatch(getTrainees());
   }
 });
 

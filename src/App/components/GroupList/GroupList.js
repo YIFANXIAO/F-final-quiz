@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './GroupList.scss';
-import GroupFrame from './Group/GroupFrame';
 
 class GroupList extends Component {
 

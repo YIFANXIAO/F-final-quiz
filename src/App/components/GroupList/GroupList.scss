@@ -1,9 +1,12 @@
 @import '../../../style/reboot';
 
 .group-list-container {
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
+
+  .group-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   h1 {
     margin: 0;

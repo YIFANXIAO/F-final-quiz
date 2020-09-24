@@ -1,0 +1,13 @@
+@import "src/style/_variables.scss";
+
+.single-group {
+  border: 1px solid $gray;
+
+  .single-group-header {
+    display: flex;
+    background: $gray;
+    align-items: center;
+  }
+
+}
+

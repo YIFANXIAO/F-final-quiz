@@ -11,9 +11,7 @@ class StudentList extends Component {
   }
 
   render() {
-
     const { data, isFetching } = this.props.trainees;
-
     return (
       <div className="student-list-container">
         <h1>学员列表</h1>

@@ -3,6 +3,7 @@ import './TraineeList.scss';
 import { connect } from 'react-redux';
 import InfoButton from '../Common/InfoButton/InfoButton';
 import { getTrainees } from '../../../actions';
+import AddEntityButton from '../Common/AddEntityButton/AddEntityButton';
 
 class TraineeList extends Component {
 
@@ -26,7 +27,7 @@ class TraineeList extends Component {
                   key={item.id}
                 />
               ))}
-              <input type="text" placeholder="+ 添加学员" />
+              <AddEntityButton placeHolderName="添加学员"/>
             </section>)
         }
       </div>

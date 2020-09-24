@@ -1,3 +1,9 @@
 .trainer-list-container{
   padding: 15px 20px;
+
+  .trainer-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 }

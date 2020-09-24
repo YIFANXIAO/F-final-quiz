@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import "./TrainerList.scss"
 import { getTrainers } from '../../../actions';
 import InfoButton from '../Common/InfoButton/InfoButton';
+import AddEntityButton from '../Common/AddEntityButton/AddEntityButton';
 
 class TrainerList extends React.Component {
 
@@ -27,6 +28,7 @@ class TrainerList extends React.Component {
                 key={item.id}
               />
             ))}
+            <AddEntityButton placeHolderName="添加讲师"/>
           </section>)
         }
       </div>

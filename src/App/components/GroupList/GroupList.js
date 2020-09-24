@@ -22,7 +22,7 @@ class GroupList extends Component {
               groupName={item.name}
               groupTrainers={item.trainers}
               gooupTrainees={item.trainees}
-              key={item.name}
+              key={item.id}
             />
           ))}
           </section>)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Student.scss';
+import './Trainee.scss';
 
-class Student extends Component {
+class Trainee extends Component {
   render() {
     return (
       <span className="student">
@@ -11,4 +11,4 @@ class Student extends Component {
   }
 }
 
-export default Student;
+export default Trainee;

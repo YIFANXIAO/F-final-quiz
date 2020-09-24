@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './StudentList.scss';
+import './TraineeList.scss';
 import { connect } from 'react-redux';
-import Student from './Student/Student';
+import Trainee from './Trainee/Trainee';
 import { getTrainees } from '../../../actions';
 
-class StudentList extends Component {
+class TraineeList extends Component {
 
   componentDidMount() {
     this.props.handleGetTrainees();
@@ -20,7 +20,7 @@ class StudentList extends Component {
           ) : (
             <section className="student-list">
               {data.map((item) => (
-                <Student
+                <Trainee
                   studentId={item.id}
                   studentName={item.name}
                   key={item.id}
@@ -44,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentList);
+export default connect(mapStateToProps, mapDispatchToProps)(TraineeList);

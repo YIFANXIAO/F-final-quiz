@@ -1,5 +1,5 @@
 import React from 'react';
-import Student from '../../../StudentList/Student/Student';
+import Trainee from '../../../TraineeList/Trainee/Trainee';
 
 class GroupTrainers extends React.Component {
 
@@ -7,7 +7,7 @@ class GroupTrainers extends React.Component {
     return (
       <div>
         {this.props.trainers.map((item) => (
-          <Student
+          <Trainee
             studentId={item.id}
             studentName={item.name}
             key={item.id}

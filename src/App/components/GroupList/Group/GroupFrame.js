@@ -1,5 +1,5 @@
 import React from 'react';
-import Student from '../../StudentList/Student/Student';
+import Trainee from '../../TraineeList/Trainee/Trainee';
 import GroupName from './GroupName/GroupName';
 import GroupTrainers from './GroupTrainers/GroupTrainers';
 import "./GroupFrame.scss"
@@ -14,7 +14,7 @@ class GroupFrame extends React.Component {
         </div>
         <div className="group-trainees">
           {this.props.gooupTrainees.map((item) => (
-            <Student
+            <Trainee
               studentId={item.id}
               studentName={item.name}
               key={item.id}

@@ -3,7 +3,7 @@ import InfoButton from '../../Common/InfoButton/InfoButton';
 import GroupName from './GroupName/GroupName';
 import GroupTrainers from './GroupTrainers/GroupTrainers';
 import "./GroupFrame.scss"
-
+//TODO feedback: 组件的抽象做得好，但是组件的命名可以简单点，就叫Group或者GroupItem就行了
 class GroupFrame extends React.Component {
   render() {
     return (

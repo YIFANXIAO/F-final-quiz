@@ -23,6 +23,7 @@ class TrainerList extends React.Component {
         ) : (
           <section className="trainer-list">
             {data.map((item) => (
+                //TODO feedback: 列表元素没有使用ul li
               <InfoButton
                 entityId={item.id}
                 entityName={item.name}

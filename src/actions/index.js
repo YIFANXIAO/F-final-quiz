@@ -8,7 +8,7 @@ export const PATCH_GROUP_NAME_REQUEST = 'PATCH_GROUP_NAME_REQUEST';
 export const PATCH_GROUP_NAME_RECEIVE = 'PATCH_GROUP_NAME_RECEIVE';
 export const CREATE_TRAINER_REQUEST = 'CREATE_TRAINER_REQUEST';
 export const CREATE_TRAINER_RECEIVE = 'CREATE_TRAINER_RECEIVE';
-
+//TODO feedback: 针对整个文件哈，可以把get,post, put, delete等最后抽象出就只有一个发请求的API
 const getTraineesRequest = () => {
   return {
     type: GET_TRAINEES_REQUEST,

@@ -8,6 +8,7 @@ class App extends Component {
   render() {
     return (
       <div data-testid="app" className="App">
+        {/*  TODO feedback: 这里可以再划分出一个home page,把这个三个组件作为它的父组件*/}
         <GroupList />
         <TrainerList />
         <TraineeList />
